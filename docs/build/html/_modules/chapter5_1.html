@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>chapter5_1 &#8212; Documentation Project_HPC 0</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Project_HPC 0</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Code du module</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Code source de chapter5_1</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="c1"># question 3</span>
+
+<div class="viewcode-block" id="count_letters"><a class="viewcode-back" href="../chapter5_1.html#chapter5_1.count_letters">[docs]</a><span class="k">def</span> <span class="nf">count_letters</span><span class="p">(</span><span class="n">word</span><span class="p">,</span><span class="n">find</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Example function with types documented in the docstring.</span>
+
+<span class="sd">	Ce code doit retourner le nombre d&#39;occurences d&#39;un caractère passé en paramètre dans un mot donné également </span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	param1 : str</span>
+<span class="sd">		Le 1er paramètre est une chaine de caractères</span>
+<span class="sd">	param2 : char</span>
+<span class="sd">		Le 2ème paramètre est un caractère</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		int</span>
+<span class="sd">			Nombre d&#39;occurences du caractère</span>
+
+<span class="sd">	Exemples</span>
+<span class="sd">	--------</span>
+<span class="sd">	&gt;&gt;&gt; count_letters(abracadabra,a)</span>
+<span class="sd">	5</span>
+<span class="sd">	&gt;&gt;&gt; count_letters(momomotus,u)</span>
+<span class="sd">	1</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
+		<span class="k">if</span> <span class="n">word</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">find</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+			<span class="n">count</span><span class="o">+=</span><span class="mi">1</span>	 
+	<span class="k">return</span> <span class="n">count</span></div>
+
+<span class="c1">#exemple</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count_letters</span><span class="p">(</span><span class="s2">&quot;abracadabra&quot;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">))</span>
+
+
+<span class="c1"># question 5</span>
+
+<span class="kn">import</span> <span class="nn">string</span>
+
+<div class="viewcode-block" id="remove_punctuation"><a class="viewcode-back" href="../chapter5_1.html#chapter5_1.remove_punctuation">[docs]</a><span class="k">def</span> <span class="nf">remove_punctuation</span><span class="p">(</span><span class="n">phrase</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Example function with types documented in the docstring.</span>
+
+<span class="sd">	Ce code doit renvoyer une chaine de caractère issue d&#39;un extrait dont la ponctuation a été supprimée </span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	param1 : str</span>
+<span class="sd">		Le 1er paramètre est une chaine de caractères</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">		str</span>
+<span class="sd">			Chaine de caractères passée en paramètre sans la ponctuation</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">phrase_sans_punct</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+	<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">phrase</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">letter</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">:</span>
+			<span class="n">phrase_sans_punct</span> <span class="o">+=</span> <span class="n">letter</span>
+	<span class="k">return</span> <span class="n">phrase_sans_punct</span></div>
+
+<span class="c1">#exemple</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">remove_punctuation</span><span class="p">(</span><span class="s2">&quot;Chaine de caractères passée en paramètre sans la ponctuation&quot;</span><span class="p">))</span>
+
+<span class="c1"># question 7</span>
+
+<div class="viewcode-block" id="reverse"><a class="viewcode-back" href="../chapter5_1.html#chapter5_1.reverse">[docs]</a><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Example function with types documented in the docstring.</span>
+
+<span class="sd">	Ce code doit renverser le mot qui lui est donné en paramètre </span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	param1 : str</span>
+<span class="sd">		Le 1er paramètre est une chaine de caractères (un mot)</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	str</span>
+<span class="sd">		Chaine de caractères qui est le mot de départ renversé</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">new_word</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">))</span> <span class="p">:</span>
+		<span class="n">new_word</span><span class="o">=</span><span class="n">new_word</span><span class="o">+</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+	<span class="k">return</span> <span class="n">new_word</span></div>
+
+<span class="c1"># question 8</span>
+
+<div class="viewcode-block" id="mirror"><a class="viewcode-back" href="../chapter5_1.html#chapter5_1.mirror">[docs]</a><span class="k">def</span> <span class="nf">mirror</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="p">:</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Example function with types documented in the docstring.</span>
+
+<span class="sd">	Ce code doit afficher le mot qui lui est donné en paramètre en miroir</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	param1 : str</span>
+<span class="sd">		Le 1er paramètre est une chaine de caractères (un mot)</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	str</span>
+<span class="sd">		Chaine de caractères qui est le mot de départ écrit comme s&#39;il était lu dans un miroir</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">new_word</span><span class="o">=</span><span class="n">word</span><span class="o">+</span><span class="n">reverse</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">new_word</span></div>
+
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Index des modules Python"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Documentation Project_HPC 0</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Code du module</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, MBourdet.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
