@@ -3,3 +3,6 @@ Ce programme permet d'effectuer plusieurs opérations sur des chaînes de caract
 
 Pour utiliser ce programme, entrez dans la ligne de commande :
 >>python3 chapter5_1.py
+
+Lien menant à la documentation :
+https://projet-motus.readthedocs.io/en/latest/
