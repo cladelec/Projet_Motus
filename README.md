@@ -9,8 +9,10 @@ https://projet-motus.readthedocs.io/en/latest/
 
 Pour installer ce package via pypi, utiliser la commande suivante
 >>pip install --index-url https://test.pypi.org/simple/ --no-deps Projet_Motus
+
 pour l'utiliser, il faut ensuite importer le package projetmotus
 >>import projetmotus
+
 notamment le fichier principal dans lequel se trouvent les principales fonctions est 
 >>import projetmotus.chapter5_1
 
